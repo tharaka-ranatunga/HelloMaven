@@ -1,16 +1,16 @@
 pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                bat 'set'
-            }
+  agent any
+  stages {
+    stage('SonarQube analysis') {
+      steps {
+        script {
+          // requires SonarQube Scanner 2.8+
+          scannerHome = tool 'sonar-scanner'
         }
-	stage('SonarQube analysis') {
-    		withSonarQubeEnv('My SonarQube Server') {
-      		// requires SonarQube Scanner for Maven 3.2+
-      		bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
-    		}
-  	}
+        withSonarQubeEnv('SonarQube') {
+          bat "${scannerHome}/bin/sonar-scanner"
+        }
+      }
     }
+  }
 }
