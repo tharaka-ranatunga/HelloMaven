@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import com.mycompany.hellomaven.HelloMaven;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,6 +19,11 @@ import static org.junit.Assert.*;
 public class HelloMavenTest {
     
     public HelloMavenTest() {
+        HelloMaven myUnit = new HelloMaven();
+
+        String result = myUnit.concatenate("one", "two");
+
+        assertEquals("onetwo", result);
     }
     
     @BeforeClass
@@ -35,6 +41,7 @@ public class HelloMavenTest {
     @After
     public void tearDown() {
     }
+    
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
