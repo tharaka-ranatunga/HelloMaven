@@ -30,6 +30,11 @@ stage('SonarQube analysis') {
           bat "${scannerHome}/bin/sonar-scanner"
         }
     }
+post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+    }
 }
 
 
