@@ -23,4 +23,30 @@ public class HelloMaven {
         return one + two;
     }
 }
+class Fruit {
+  @NotNull
+  private Season ripe;
+
+  private String color;
+
+  public Fruit() {  // Noncompliant; ripe is left null
+  }
+
+  public void setColor(@NotNull String color) {
+    this.color = color;
+  }
+
+  public @NotNull Integer getProtein() {
+    return null;  // Noncompliant
+  }
+}
+
+class MyClass {
+
+  public void doSomething() {
+
+    Fruit fruit = new Fruit();
+    fruit.setColor(null);  // Noncompliant
+  }
+}
 
