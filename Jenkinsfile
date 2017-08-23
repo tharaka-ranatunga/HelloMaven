@@ -1,5 +1,6 @@
 node {
    def mvnHome
+stages{
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
       git 'https://github.com/tharaka-ranatunga/HelloMaven.git'
@@ -30,6 +31,7 @@ stage('SonarQube analysis') {
           bat "${scannerHome}/bin/sonar-scanner"
         }
     }
+}
 post { 
         always { 
             echo 'I will always say Hello again!'
