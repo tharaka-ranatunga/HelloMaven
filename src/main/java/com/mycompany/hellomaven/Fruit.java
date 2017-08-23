@@ -5,10 +5,23 @@
  */
 package com.mycompany.hellomaven;
 
-/**
- *
- * @author tharaka_ra
- */
-public class Fruit {
-    
+import com.sun.istack.internal.NotNull;
+
+
+public class Fruit{
+  @NotNull
+  private Season ripe;
+
+  private String color;
+
+  public Fruit() {  // Noncompliant; ripe is left null
+  }
+
+  public void setColor(@NotNull String color) {
+    this.color = color;
+  }
+
+  public @NotNull Integer getProtein() {
+    return null;  // Noncompliant
+  }
 }

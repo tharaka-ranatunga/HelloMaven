@@ -10,5 +10,10 @@ package com.mycompany.hellomaven;
  * @author tharaka_ra
  */
 public class MyClass {
-    
+
+  public void doSomething() {
+
+    Fruit fruit = new Fruit();
+    fruit.setColor(null);  // Noncompliant
+  }
 }
