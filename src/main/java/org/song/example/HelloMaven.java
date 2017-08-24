@@ -1,5 +1,5 @@
 
-package com.mycompany.hellomaven;
+package org.song.example;
 
 import java.math.BigDecimal;
 
