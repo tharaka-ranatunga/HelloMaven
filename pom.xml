@@ -10,12 +10,17 @@
 
 	
     <properties>
+        <sonar.projectKey>NewMaven</sonar.projectKey>
+        <sonar.projectVersion>1.0</sonar.projectVersion>
+        <sonar.sources>.</sonar.sources>
+        <sonar.language>java</sonar.language>
+        <sonar.junit.reportsPath>target/jacoco.exec</sonar.junit.reportsPath>
+        <sonar.jacoco.reportPath>target/jacoco.exec</sonar.jacoco.reportPath>
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
                 <maven.compiler.source>1.8</maven.compiler.source>
                 <maven.compiler.target>1.8</maven.compiler.target>
 		<testng.version>6.8.8</testng.version>
 		<surefire.version>2.17</surefire.version>
-                <sonar.language>java</sonar.language>
 		<jacoco.version>0.7.2.201409121644</jacoco.version>
     </properties>
     
